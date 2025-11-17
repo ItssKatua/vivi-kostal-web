@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="history-wrapper">
+            <div id="history-list">
+
+            </div>
+        </div>
+    </div>
+    <footer>
+        Filip Minárik © 2025
+    </footer>
+
+    <script>
+        async function loadBlogHistory() {
+            try {
+                const response = await fetch("../../content/blog.json");
+                const data = await response.json();
+
+                const list = document.getElementById("history-list");
+                list.innerHTML = "";
+
+                data.blogs.pop();
+                data.blogs.reverse();
+
+                data.blogs.forEach(blog => {
+                    const div = document.createElement("div");
+                    div.className = "history-entry";
+
+                    div.innerHTML = `
+                        <div class="date">${blog.date}</div>
+                        <div class="text">${blog.text}</div>
+                    `;
+
+                    list.appendChild(div);
+                });
+            }
+            catch (err) {
+                console.error("blog.json caught error: ", err);
+            }
+        }
+
+        window.onload = loadBlogHistory;
+</script>
+</body>
+</html>

@@ -14,6 +14,7 @@ html {
     color: white;
     font-size: 0.9rem;
     letter-spacing: 0.05em;
+    font-family: Papyrus, monospace;
 }
 
 .wrapper {
@@ -117,7 +118,6 @@ footer {
 }
 
 .demon-text {
-    font-family: Papyrus, monospace;
     font-size: 1.4rem;
     letter-spacing: 0.05em;
     text-align: center;
@@ -130,7 +130,6 @@ footer {
 }
 
 .demon-date {
-    font-family: Papyrus, monospace;
     font-size: 1.2rem;
     letter-spacing: 0.05em;
     text-align: center;
@@ -139,6 +138,32 @@ footer {
     width: 63%;
     top: 22%;
     left: 41%;
+}
+
+/* #endregion */
+
+/* #region blog-history */
+.history-wrapper {
+    width: 60%;
+    height: 80vh;
+    margin: auto;
+    overflow-y: scroll;
+    padding: 1rem;
+}
+
+.history-entry {
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.history-entry .date {
+    font-size: 1rem;
+    margin-bottom: .5rem;
+    opacity: 0.8;
+}
+
+.history-entry .text {
+    font-size: 1rem;
 }
 
 /* #endregion */
