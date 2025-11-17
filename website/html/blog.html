@@ -7,37 +7,39 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <a href="javascript:history.back()"><img src="../img/open.png" alt="return" id="animated" class="element return"></a>
+    <script src="../back.js"></script>
     <div class="wrapper">
         <div class="layout">
-            <p class="element demon-date" id="date">19.19.1919</p>
-            <p class="element demon-text" id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit facere totam commodi itaque. Facere aliquam qui in, eum cupiditate enim voluptatum suscipit molestiae maiores veniam quam nobis vitae ipsum explicabo. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur illum voluptate ipsum quod voluptates, esse rem quasi soluta inventore ducimus sit laboriosam optio debitis dolorem eveniet iure impedit, temporibus magnam.</p>
+            <p class="element demon-date" id="date"></p>
+            <p class="element demon-text" id="text"></p>
             <a href="blog-history.html" style="width: 10%;"><img src="../img/demon.png" alt="blog history" class="element demon"></a>
         </div>
     </div>
     <footer>
         Filip Minárik © 2025
     </footer>
-
-    <script>
-        async function loadLatestBlog() {
-            try {
-                const response = await fetch("../../content/blog.json");
-                const data = await response.json();
-
-                const blogs = data.blogs;
-                if (!blogs || blogs.length === 0) return;
-
-                const latest = blogs[blogs.length - 1];
-
-                document.getElementById("date").textContent = latest.date;
-                document.getElementById("text").textContent = latest.text;
-            } 
-            catch (err) {
-                console.error("blog.json caught error: ", err);
-            }
-        }
-
-        window.onload = loadLatestBlog;
-</script>
 </body>
+
+<script>
+    async function loadLatestBlog() {
+        try {
+            const response = await fetch("../../content/blog.json");
+            const data = await response.json();
+
+            const blogs = data.blogs;
+            if (!blogs || blogs.length === 0) return;
+
+            const latest = blogs[blogs.length - 1];
+
+            document.getElementById("date").textContent = latest.date;
+            document.getElementById("text").textContent = latest.text;
+        } 
+        catch (err) {
+            console.error("blog.json caught error: ", err);
+        }
+    }
+
+    window.onload = loadLatestBlog;
+</script>
 </html>

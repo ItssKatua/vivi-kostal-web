@@ -15,6 +15,7 @@ html {
     font-size: 0.9rem;
     letter-spacing: 0.05em;
     font-family: Papyrus, monospace;
+    overflow-x: hidden;
 }
 
 .wrapper {
@@ -62,6 +63,15 @@ footer {
     max-width: 100%;
     height: auto;
 }
+
+.return {
+    top: 7%;
+    left: 7%;
+    width: 10%;
+    z-index: 2;
+}
+
+
 
 /* #endregion */
 
@@ -143,12 +153,14 @@ footer {
 /* #endregion */
 
 /* #region blog-history */
-.history-wrapper {
+.history-layout {
     width: 60%;
-    height: 80vh;
+    height: auto;
     margin: auto;
-    overflow-y: scroll;
     padding: 1rem;
+    padding-top: 4rem;
+    border: 0px solid white;
+    text-align: center;
 }
 
 .history-entry {
@@ -163,7 +175,15 @@ footer {
 }
 
 .history-entry .text {
-    font-size: 1rem;
+    font-size: 1.5rem;
+}
+
+.history-arch {
+    top: 14%;
+    left: 91%;
+    width: 14%;
+    z-index: 2;
+
 }
 
 /* #endregion */
