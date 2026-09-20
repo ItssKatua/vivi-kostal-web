@@ -34,6 +34,7 @@ async function loadGallery() {
             } else {
                 column2.appendChild(item);
             }
+            withCat(img);
         });
 
         initEffects(gallery);

@@ -203,11 +203,12 @@ footer {
 /* #region gallery */
 
 .masonry {
-    width: 60%;
-    padding: 4rem 0;
+    width: 75%;
+    padding: 10rem 0;
     display: flex;
     align-items: flex-start;
-    gap: 3vw;
+    gap: 10rem;
+    z-index: 3;
 }
 
 .masonry-column {
@@ -226,7 +227,7 @@ footer {
 }
 
 .masonry .turnable {
-    margin-bottom: 2rem;
+    margin-bottom: 8rem;
     break-inside: avoid;
 }
 
@@ -311,5 +312,26 @@ footer {
     body,
     html {
         font-size: 0.6rem;
+    }
+}
+
+img.cat {
+    position: absolute;
+    height: auto;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.img-pending {
+    visibility: hidden;
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        rotate: 360deg;
     }
 }

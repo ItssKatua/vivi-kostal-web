@@ -1,17 +1,23 @@
-const frames = ["../img/open.png", "../img/closed.png", "../img/open.png", "../img/closed.png"];
-const delays = [200, 1000];
+const openImg = document.getElementById("animated");
 
+const closedImg = document.createElement("img");
+closedImg.className = openImg.className;
+closedImg.alt = "";
+closedImg.src = "../img/closed.png";
+closedImg.style.visibility = "hidden";
+openImg.after(closedImg);
+
+openImg.draggable = false;
+closedImg.draggable = false;
+
+const frames = [openImg, closedImg, openImg, closedImg];
 let current = 0;
-const img = document.getElementById('animated');
-img.setAttribute('draggable', false)
-
-frames.forEach(src => {
-    const i = new Image();
-    i.src = src;
-});
 
 function nextFrame() {
-    img.src = frames[current];
+    const shown = frames[current];
+    const other = shown === openImg ? closedImg : openImg;
+    shown.style.visibility = "visible";
+    other.style.visibility = "hidden";
 
     const delay = (current === 3) ? 1000 : 200;
     current = (current + 1) % frames.length;
