@@ -1,3 +1,12 @@
 {
-    "name": ""
+    "images": [
+        {
+            "filename": "votv-carmap.png",
+            "description": "this is an image"
+        },
+        {
+            "filename": "image2",
+            "description": "this is an image"
+        }
+    ]
 }
