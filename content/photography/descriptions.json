@@ -5,7 +5,35 @@
             "description": "this is an image"
         },
         {
-            "filename": "image2",
+            "filename": "luther-king.jpg",
+            "description": "this is an image"
+        },
+        {
+            "filename": "1.png",
+            "description": "this is an image"
+        },
+        {
+            "filename": "b.png",
+            "description": "this is an image"
+        },
+        {
+            "filename": "a.jpg",
+            "description": "this is an image"
+        },
+        {
+            "filename": "a.jpg",
+            "description": "this is an image"
+        },
+        {
+            "filename": "b.png",
+            "description": "this is an image"
+        },
+        {
+            "filename": "b.png",
+            "description": "this is an image"
+        },
+        {
+            "filename": "luther-king.jpg",
             "description": "this is an image"
         }
     ]

@@ -1,5 +1,13 @@
 const cursor = document.getElementById("cursor");
 
+function isTouchDevice() {
+    return window.ontouchstart !== undefined;
+}
+
+if (isTouchDevice()) {
+    //cursor.remove()
+}
+
 const curs = {
     fork: {
         src: "../img/fork.png",
@@ -34,9 +42,10 @@ function updateCurs(x, y) {
     cursor.style.transform = `translate(${x - cur.hotspot.x}px, ${y - cur.hotspot.y}px)`;
 }
 
+const interactive = "a, button, .clickable, .draggable, .turnable";
 // href
 document.addEventListener("mouseover", e => {
-    if (e.target.closest("a, button, .clickable, .draggable")) {
+    if (e.target.closest(interactive)) {
         setCursor("cherry");
     } else {
         setCursor("fork");
@@ -45,14 +54,14 @@ document.addEventListener("mouseover", e => {
 
 // mdown
 document.addEventListener("mousedown", e => {
-    if (e.target.closest("a, button, .clickable, .draggable")) {
+    if (e.target.closest(interactive)) {
         setCursor("both");
     }
 });
 
 // mup
 document.addEventListener("mouseup", e => {
-    if (e.target.closest("a, button, .clickable, .draggable")) {
+    if (e.target.closest(interactive)) {
         setCursor("cherry");
     } else {
         setCursor("fork");

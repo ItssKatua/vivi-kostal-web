@@ -27,7 +27,7 @@ html {
     background-color: #0026ff;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 footer {
@@ -166,7 +166,7 @@ footer {
 /* #region blog-history */
 
 .history-layout {
-    width: 60%;
+    width: 70%;
     height: auto;
     margin: auto;
     padding: 1rem;
@@ -200,4 +200,116 @@ footer {
 
 /* #endregion */
 
-/*
+/* #region gallery */
+
+.masonry {
+    width: 60%;
+    padding: 4rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 3vw;
+}
+
+.masonry-column {
+    display: flex;
+    flex-direction: column;
+    break-inside: avoid;
+}
+
+.masonry-column:first-child {
+    width: 45%;
+}
+
+.masonry-column:last-child {
+    width: 55%;
+    padding-top: 10%;
+}
+
+.masonry .turnable {
+    margin-bottom: 2rem;
+    break-inside: avoid;
+}
+
+.masonry img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* #endregion */
+
+/* #region effects */
+
+.shakeable:hover {
+    animation: shake 0.3s linear infinite;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        rotate: 0deg;
+    }
+
+    25% {
+        rotate: calc(var(--shake, 1deg) * -1);
+    }
+
+    75% {
+        rotate: var(--shake, 1deg);
+    }
+}
+
+.turnable {
+    perspective: 1000px;
+    transition: scale 0.2s;
+}
+
+.turnable:hover {
+    scale: 1.02;
+}
+
+.turnable-inner {
+    position: relative;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.turnable.turned .turnable-inner {
+    transform: rotateY(180deg);
+}
+
+.turnable-front,
+.turnable-back {
+    backface-visibility: hidden;
+}
+
+.turnable-front img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.turnable-back {
+    position: absolute;
+    inset: 0;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+    background-color: #0026ff;
+    border: 1px solid white;
+}
+
+/* #endregion */
+
+@media only screen and (max-width: 767px) {
+
+    body,
+    html {
+        font-size: 0.6rem;
+    }
+}
