@@ -3,6 +3,7 @@ const delays = [200, 1000];
 
 let current = 0;
 const img = document.getElementById('animated');
+img.setAttribute('draggable', false)
 
 frames.forEach(src => {
     const i = new Image();

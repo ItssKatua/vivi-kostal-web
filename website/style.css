@@ -1,9 +1,11 @@
 /* #region index */
 
 * {
+    cursor: none;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 body,
@@ -71,7 +73,16 @@ footer {
     z-index: 2;
 }
 
-
+#cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 128px;
+    pointer-events: none;
+    user-select: none;
+    z-index: 9999;
+    will-change: transform;
+}
 
 /* #endregion */
 
@@ -153,6 +164,7 @@ footer {
 /* #endregion */
 
 /* #region blog-history */
+
 .history-layout {
     width: 60%;
     height: auto;
@@ -187,3 +199,5 @@ footer {
 }
 
 /* #endregion */
+
+/*

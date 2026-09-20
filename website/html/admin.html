@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            width: 100%;
+            background-color: #0026ff;
+            color: white;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            font-family: Papyrus, monospace;
+            overflow-x: hidden;
+        }
+        .element {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            max-width: 100%;
+            height: auto;
+        }
+
+        .return {
+            top: 7%;
+            left: 7%;
+            width: 10%;
+            z-index: 2;
+        }
+        .adminpanel {
+            border: 1px, solid, white;
+            padding: 2px;
+            width: 200px;
+            height: 200px;
+            word-wrap: break-word;
+            overflow: hidden;
+        }
+        .a{
+            top: 50%;
+            left: 50%;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            max-width: 70%;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body">
+    <a href="./index.html"><img src="../img/open.png" alt="return" id="animated" class="element return"></a>
+    <script src="../back.js"></script>
+
+    <div class="element a">
+
+        <script src="../adm.js"></script>
+        <form action="javascript:;" onsubmit="odin(this); return false;">
+            <input type="password" name="p">
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="adminpanel">
+            photography <br><br>
+            upload
+            <form action="">
+                <input type="file" name="img">
+                <input type="text" name="txt" placeholder="description">
+                <input type="submit" value="submit photo">
+            </form>
+            <br>
+            edit
+        </div>
+        <div class="adminpanel">
+            sculptures
+        </div>
+        <div class="adminpanel">
+            drawing
+        </div>
+        <div class="adminpanel">
+            blog
+        </div>
+        
+    </div>
+</body>
+</html>
